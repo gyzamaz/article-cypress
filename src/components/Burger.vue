@@ -23,11 +23,6 @@ const { mapState: mapStateMenu, mapActions: mapActionsMenu } = createNamespacedH
  */
 export default {
   name: 'Burger',
-  data () {
-    return {
-      isActive: false
-    }
-  },
   computed: {
     ...mapStateMenu({
       isNavOpen: state => state.isNavOpen
@@ -51,11 +46,10 @@ export default {
 
     button {
         cursor: pointer;
-    }
 
-    /* remove blue outline */
-    button:focus {
-        outline: 0;
+        &:focus {
+            outline: 0;
+        }
     }
 
     .burger {
@@ -73,6 +67,10 @@ export default {
 
             @include md {
                 display: none;
+            }
+
+            &:hover .burger__bar--2 {
+                transform: scaleX(1);
             }
         }
 
@@ -127,9 +125,6 @@ export default {
                 transform: translateY(6px);
             }
         }
-    }
-    .burger__button:hover .burger__bar--2 {
-        transform: scaleX(1);
     }
 
     .no-touchevents .burger__bar--2:hover {

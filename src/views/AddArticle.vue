@@ -1,5 +1,6 @@
 <template>
-  <div class="RegisterArticle">
+  <div class="AddArticle">
+    <h1>Add Article</h1>
     <form @submit.prevent="submit" class="w-2/3 mx-auto">
       <form-wrapper :validator="$v.form">
         <div class="-mx-4">
@@ -79,10 +80,10 @@ function articleForm () {
 }
 
 /**
- * @module RegisterArticle
+ * @module AddArticle
  */
 export default {
-  name: 'RegisterArticle',
+  name: 'AddArticle',
   data () {
     return {
       form: articleForm()

@@ -6,9 +6,8 @@ export default {
   state: {
     isDesktop: null,
     isMobile: null,
-    isTablet: null,
-    width: 500
+    isTablet: null
   },
-  mutations,
-  actions
+  actions,
+  mutations
 }

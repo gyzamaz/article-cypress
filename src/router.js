@@ -19,7 +19,7 @@ export default new Router({
     {
       path: '/add-article',
       name: 'addArticle',
-      component: load('RegisterArticle')
+      component: load('AddArticle')
     },
     {
       path: '/articles',

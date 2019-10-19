@@ -25,4 +25,10 @@
 
 `npm run test:e2e -- --url http://locahost:8080`
 
+3. Reference:
+
+[Cypress - The Progressive JavaScript Framework](https://vuejs.org/)
+
+[Vue.js - JavaScript End to End Testing Framework](https://www.cypress.io/)
+
 <a href="mailto:konrad@kadzielawa.dev">konrad@kadzielawa.dev</a>

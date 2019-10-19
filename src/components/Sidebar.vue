@@ -1,23 +1,33 @@
 <template>
     <div class="sidebar">
         <div class="sidebar__backdrop" @click="toggleNavigation" v-if="isPanelOpen"></div>
-
-        <div v-if="!isMobile"
-             :class="['sidebar__panel', {'sidebar__panel--desktop': !isMobile}]">
+        <div class="sidebar__panel" v-if="!isMobile" :class="{'sidebar__panel--desktop': !isMobile }">
             <nav id="menuDesktop" class="sidebar__navigation">
-                <router-link :to="{ name: 'home' }" v-on:click.native="toggleNavigation">Home</router-link>
-                | <router-link :to="{ name: 'articleList' }"  v-on:click.native="toggleNavigation">Articles</router-link>
-                | <router-link :to="{ name: 'addArticle' }"  v-on:click.native="toggleNavigation">Add Article</router-link>
+                <router-link :to="{ name: 'home' }">
+                    Home
+                </router-link>
+                |
+                <router-link :to="{ name: 'articleList' }">
+                    Articles
+                </router-link>
+                |
+                <router-link :to="{ name: 'addArticle' }">
+                    Add Article
+                </router-link>
             </nav>
         </div>
-
-        <transition name="slide">
-            <div v-if="isPanelOpen"
-                 class="sidebar__panel sidebar__panel--mobile">
+        <transition name="slide" v-if="isNavOpen" >
+            <div class="sidebar__panel" :class="{'sidebar__panel--mobile': isMobile}">
                 <nav id="menu" class="sidebar__navigation">
-                    <router-link :to="{ name: 'home' }" v-on:click.native="toggleNavigation">Home</router-link>
-                    <router-link :to="{ name: 'articleList' }"  v-on:click.native="toggleNavigation">Articles</router-link>
-                    <router-link :to="{ name: 'addArticle' }"  v-on:click.native="toggleNavigation">Add Article</router-link>
+                    <router-link :to="{ name: 'home' }" v-on:click.native="toggleNavigation">
+                        Home
+                    </router-link>
+                    <router-link :to="{ name: 'articleList' }"  v-on:click.native="toggleNavigation">
+                        Articles
+                    </router-link>
+                    <router-link :to="{ name: 'addArticle' }"  v-on:click.native="toggleNavigation">
+                        Add Article
+                    </router-link>
                 </nav>
             </div>
         </transition>
@@ -53,8 +63,6 @@ export default {
 
 <style lang="scss" scoped>
     @import "./../assets/styles/mixin";
-
-    /** sidebar **/
 
     .slide-enter-active,
     .slide-leave-active
@@ -117,9 +125,7 @@ export default {
                     font-size: 22px;
                     display: inline-block;
                 }
-
             }
         }
     }
-
 </style>

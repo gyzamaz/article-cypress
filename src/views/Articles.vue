@@ -1,6 +1,6 @@
 <template>
   <div class="Articles">
-    <h2>Articles</h2>
+    <h1>Articles</h1>
     <div class="Articles__container my-8 w-2/3 mx-auto">
       <load-more
           :limit="2"
